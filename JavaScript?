@@ -1,0 +1,107 @@
+(function() {
+    'use strict';
+
+    //Loop to retain page content every second
+    setTimeout(function() {
+
+        if( $('div:contains("You are in jail!")').length > 0){
+            setTimeout(function(){ location.reload(); },100);
+        }else if( $('td:contains("You have been caught")').length > 0){
+            setTimeout(function(){ location.reload(); },100);
+        }else if( $('*:contains("Web server is returning an unknown error")').length > 0){
+            setTimeout(function(){ location.reload(); },100);
+        } else {
+            // GTA
+            if( window.location.href == 'https://infamousgangsters.com/site.php?page=gta' || window.location.href == 'https://www.infamousgangsters.com/site.php?page=gta'){
+                igCommitGTA();
+            }
+
+            // CRIMES
+            if( window.location.href == 'https://infamousgangsters.com/site.php?page=crimes' || window.location.href == 'https://www.infamousgangsters.com/site.php?page=crimes'){
+                igCommitCRIMES();
+            }
+        }
+
+    }, 1000);
+
+
+    function igCommitGTA(){
+
+        if( $('*:contains("*Please wait")').length > 0){
+
+            if( window.location.href == 'https://infamousgangsters.com/site.php?page=gta'){
+                window.location.href ='https://infamousgangsters.com/site.php?page=crimes';
+            }
+
+            if( window.location.href == 'https://www.infamousgangsters.com/site.php?page=gta'){
+                window.location.href ='https://www.infamousgangsters.com/site.php?page=crimes';
+            }
+
+        }else if( $('*:contains("You stole")').length > 0){
+
+            if( window.location.href == 'https://infamousgangsters.com/site.php?page=gta'){
+                window.location.href ='https://infamousgangsters.com/site.php?page=crimes';
+            }
+
+            if( window.location.href == 'https://www.infamousgangsters.com/site.php?page=gta'){
+                window.location.href ='https://www.infamousgangsters.com/site.php?page=crimes';
+            }
+
+        }else if( $('*:contains("You have been")').length > 0){
+
+            if( window.location.href == 'https://infamousgangsters.com/site.php?page=gta'){
+                window.location.href ='https://infamousgangsters.com/site.php?page=crimes';
+            }
+
+            if( window.location.href == 'https://www.infamousgangsters.com/site.php?page=gta'){
+                window.location.href ='https://www.infamousgangsters.com/site.php?page=crimes';
+            }
+
+        }else{
+            $('input[value="Steal a car!"]:visible')[0].click();
+        }
+
+    }
+
+    function igCommitCRIMES(){
+
+
+
+        if( $('*:contains("You can not commit the crime yet")').length > 0){
+
+            if( window.location.href == 'https://infamousgangsters.com/site.php?page=crimes'){
+                window.location.href ='https://infamousgangsters.com/site.php?page=gta';
+            }
+
+            if( window.location.href == 'https://www.infamousgangsters.com/site.php?page=crimes'){
+                window.location.href ='https://www.infamousgangsters.com/site.php?page=gta';
+            }
+
+        }else if( $('*:contains("You have been")').length > 0){
+
+            if( window.location.href == 'https://infamousgangsters.com/site.php?page=crimes'){
+                window.location.href ='https://infamousgangsters.com/site.php?page=gta';
+            }
+
+            if( window.location.href == 'https://www.infamousgangsters.com/site.php?page=crimes'){
+                window.location.href ='https://www.infamousgangsters.com/site.php?page=gta';
+            }
+
+        }else{
+            $('input[type="checkbox"]:visible')[1].click();
+            $('input[type="checkbox"]:visible')[2].click();
+            $('input[type="checkbox"]:visible')[3].click();
+            $('input[type="checkbox"]:visible')[4].click();
+            $('input[type="checkbox"]:visible')[6].click();
+            $('input[type="checkbox"]:visible')[7].click();
+            $('input[type="checkbox"]:visible')[8].click();
+            $('input[type="checkbox"]:visible')[9].click();
+            $('input[type="checkbox"]:visible')[10].click();
+            $('input[value="Commit!"]:visible')[0].click();
+
+        }
+
+    }
+
+})();
+
